@@ -1,0 +1,315 @@
+/* Intel Color Palette */
+:root {
+  --intel-blue: #0068b5;
+  --intel-blue-dark: #00447c;
+  --intel-blue-light: #eaf6ff;
+  --card-bg: #fff;
+  --card-shadow: 0 4px 16px rgba(0, 104, 181, 0.08);
+  --card-hover-shadow: 0 8px 32px rgba(0, 104, 181, 0.18);
+}
+
+/* Reset and base styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: var(--intel-blue-light);
+  color: #222;
+}
+
+/* Hero Section */
+header {
+  background: linear-gradient(135deg, var(--intel-blue) 0%, var(--intel-blue-dark) 100%);
+  color: #fff;
+  text-align: center;
+  padding: 56px 16px 40px 16px;
+}
+
+header img {
+  width: 90px;
+  height: auto;
+  margin-bottom: 18px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.12));
+}
+
+header h1 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: 1.5px;
+  line-height: 1.1;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  text-transform: uppercase;
+}
+
+header p {
+  font-size: 1.18rem;
+  max-width: 600px;
+  margin: 22px auto 0 auto;
+  line-height: 1.6;
+  color: #eaf6ff;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+/* Timeline Section */
+section {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  gap: 32px;
+  background: var(--intel-blue-light);
+  padding: 40px 0 24px 0;
+  scroll-snap-type: x mandatory;
+  align-items: stretch;
+}
+
+section > div {
+  background: var(--card-bg);
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+  width: 100%;
+  min-width: 260px;
+  min-height: 260px;
+  padding: 24px 18px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  position: relative;
+  scroll-snap-align: start;
+  border: 2px solid transparent;
+  overflow: hidden;
+  height: 100%;
+}
+
+/* Ensure all cards have the same height */
+section {
+  align-items: stretch;
+}
+
+/* Make sure images, headings, and paragraphs do not stretch the card unevenly */
+section > div img {
+  width: 100%;
+  max-height: 90px;
+  object-fit: contain;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  background: #f5faff;
+  display: block;
+  flex-shrink: 0;
+}
+
+section > div h2,
+section > div h3,
+section > div img,
+section > div p,
+section > div .card-details {
+  width: 100%;
+}
+
+section h2 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--intel-blue);
+  margin-bottom: 6px;
+  margin-top: 0;
+}
+
+section h3 {
+  font-size: 1.08rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #222;
+  margin-top: 0;
+}
+
+section p {
+  font-size: 1rem;
+  color: #222;
+  margin-top: auto;
+}
+
+/* Reveal details on hover */
+.card-details {
+  opacity: 0;
+  max-height: 0;
+  transition: opacity 0.3s, max-height 0.3s;
+  font-size: 0.97rem;
+  color: var(--intel-blue-dark);
+  margin-top: 10px;
+  pointer-events: none;
+}
+
+section > div:hover .card-details {
+  opacity: 1;
+  max-height: 120px;
+  pointer-events: auto;
+}
+
+/* Timeline scroll hint */
+body > p {
+  text-align: center;
+  color: var(--intel-blue-dark);
+  font-size: 1rem;
+  margin: 18px 0 32px 0;
+}
+
+/* Newsletter Subscription Form Styles */
+.newsletter-section {
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+}
+
+.newsletter-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.newsletter-inner {
+  width: 100%;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.newsletter-card {
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.05);
+  border: none;
+  border-radius: 1rem;
+  background: #fff;
+}
+
+.newsletter-card-body {
+  padding: 2rem;
+}
+
+.newsletter-title {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.newsletter-field {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.newsletter-field label {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.newsletter-field input[type="text"],
+.newsletter-field input[type="email"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.newsletter-btn {
+  width: 100%;
+  padding: 10px 0;
+  background: #0068b5;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.newsletter-btn:hover,
+.newsletter-btn:focus {
+  background: #00447c;
+}
+
+/* Footer Styles */
+.site-footer {
+  background: #f2f6fa;
+  color: #444;
+  padding: 32px 0 24px 0;
+  text-align: center;
+  font-size: 1rem;
+  border-top: 1px solid #e0e6ed;
+  margin-top: 40px;
+}
+
+.footer-content {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 0.98rem;
+}
+
+.footer-nav a {
+  color: #0068b5;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-nav a:hover,
+.footer-nav a:focus {
+  color: #00447c;
+  text-decoration: underline;
+}
+
+.footer-sep {
+  color: #bbb;
+}
+
+/* Make timeline section background stretch edge-to-edge */
+.timeline-edge-bg {
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  background: var(--intel-blue-light);
+  padding: 40px 0 24px 0;
+}
+
+/* Remove background and padding from section when inside .timeline-edge-bg */
+.timeline-edge-bg > section {
+  background: none;
+  padding: 0;
+  margin: 0 auto;
+}
+
+/* Responsive: Stack timeline vertically on small screens */
+@media (max-width: 900px) {
+  section {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    overflow-x: unset;
+    scroll-snap-type: none;
+  }
+  section > div {
+    width: 90vw;
+    min-width: unset;
+    max-width: 340px;
+  }
+}
+
+
