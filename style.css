@@ -53,8 +53,8 @@ header p {
   text-shadow: 0 1px 4px rgba(0,0,0,0.08);
 }
 
-/* Timeline Section */
-section {
+/* Timeline Section: Only apply flex to the timeline, not all sections */
+.timeline-edge-bg > section {
   display: flex;
   flex-direction: row;
   overflow-x: auto;
@@ -65,7 +65,8 @@ section {
   align-items: stretch;
 }
 
-section > div {
+/* Timeline cards */
+.timeline-edge-bg > section > div {
   background: var(--card-bg);
   border-radius: 10px;
   box-shadow: var(--card-shadow);
@@ -86,12 +87,12 @@ section > div {
 }
 
 /* Ensure all cards have the same height */
-section {
+.timeline-edge-bg > section {
   align-items: stretch;
 }
 
 /* Make sure images, headings, and paragraphs do not stretch the card unevenly */
-section > div img {
+.timeline-edge-bg > section > div img {
   width: 100%;
   max-height: 90px;
   object-fit: contain;
@@ -102,11 +103,11 @@ section > div img {
   flex-shrink: 0;
 }
 
-section > div h2,
-section > div h3,
-section > div img,
-section > div p,
-section > div .card-details {
+.timeline-edge-bg > section > div h2,
+.timeline-edge-bg > section > div h3,
+.timeline-edge-bg > section > div img,
+.timeline-edge-bg > section > div p,
+.timeline-edge-bg > section > div .card-details {
   width: 100%;
 }
 
@@ -289,23 +290,22 @@ body > p {
   padding: 40px 0 24px 0;
 }
 
-/* Remove background and padding from section when inside .timeline-edge-bg */
-.timeline-edge-bg > section {
-  background: none;
-  padding: 0;
-  margin: 0 auto;
-}
-
 /* Responsive: Stack timeline vertically on small screens */
 @media (max-width: 900px) {
-  section {
+  .timeline-edge-bg > section {
     flex-direction: column;
     align-items: center;
     gap: 24px;
     overflow-x: unset;
     scroll-snap-type: none;
   }
-  section > div {
+  .timeline-edge-bg > section > div {
+    width: 90vw;
+    min-width: unset;
+    max-width: 340px;
+  }
+}
+}
     width: 90vw;
     min-width: unset;
     max-width: 340px;
